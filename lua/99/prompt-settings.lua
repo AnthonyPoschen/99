@@ -8,7 +8,7 @@ end
 --- @class _99.Prompts.SpecificOperations
 --- @field visual_selection fun(range: _99.Range): string
 --- @field semantic_search fun(): string
---- @field prompt fun(prompt: string, action: string, name: string): string
+--- @field prompt fun(prompt: string, action: string, name?: string): string
 --- @field role fun(): string
 --- @field read_tmp fun(): string
 local prompts = {
@@ -53,7 +53,7 @@ ONLY provide requested changes by writing the change to TEMP_FILE
   end,
   --- @param prompt string
   --- @param action string
-  --- @param name string defaults to DIRECTIONS
+  --- @param name? string defaults to DIRECTIONS
   --- @return string
   prompt = function(prompt, action, name)
     name = name or "DIRECTIONS"
